@@ -11,4 +11,5 @@ Depends:
 Imports:
 Suggests:
 Collate:
+	logger.R
 RoxygenNote: 6.0.1
