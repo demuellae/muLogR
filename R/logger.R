@@ -26,7 +26,7 @@
 get.memory.usage <- function() {
 	if (.Platform$OS == "windows") {
 		memused <- memory.size() / 1024
-	} else if (Sys.info()["sysname"] == "Darwin") {
+	} else if (Sys.info()["sysname"] == "Darwin") { # MAC
 		processinfo <- system(paste('top -pid', Sys.getpid(), '-l 1 -stats MEM'), intern = TRUE)
 		processinfo <- gsub("\\+$", "", processinfo[length(processinfo)])
 		regex.process <- "(\\d+)([A-Z]?)$"
@@ -247,7 +247,7 @@ logger.warning <- function(txt) {
 #' @export
 logger.error <- function(txt, terminate=FALSE) {
 	if (!logger.isinitialized()) {
-		stop("logger is not initialized")
+		# stop("logger is not initialized")
 		logger.start(fname=NA) #initialize the logger to the console if not started yet
 	}
 	logger.paste("ERROR", txt)
