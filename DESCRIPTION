@@ -11,3 +11,4 @@ Depends:
 Imports:
 Suggests:
 Collate:
+RoxygenNote: 6.0.1
