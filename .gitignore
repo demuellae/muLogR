@@ -1,0 +1,12 @@
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.project
+*.log
+*.aux
+*.fls
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+sftp-config.json
