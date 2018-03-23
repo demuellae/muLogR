@@ -49,5 +49,5 @@ logger.close()
 logger.isinitialized
 }
 \author{
-Yassen Assenov
+adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 }

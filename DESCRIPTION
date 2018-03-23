@@ -1,7 +1,9 @@
 Package: muLogR
 Title: muLogR
-Description: Logging and code structuring for R
+Description: Logging and code structuring for R. Based on code from the RnBeads package.
 Authors@R: c(
+	person("Yassen", "Assenov", email = "yassen@mpi-inf.mpg.de",
+    role = c("aut")),
     person("Fabian", "Mueller", email = "fmueller@mpi-inf.mpg.de",
     role = c("aut", "cre")))
 Date: 2018-03-22

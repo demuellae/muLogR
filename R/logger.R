@@ -22,7 +22,7 @@
 ## In Windows, the returned value measures only the memory allocated by this session. It does not include the memory
 ## used by the R system itself (and many of the loaded libraries). In Linux and Mac OS, the returned value is the total
 ## memory used by the R process that runs this script.
-## @author Yassen Assenov
+## @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 get.memory.usage <- function() {
 	if (.Platform$OS == "windows") {
 		memused <- memory.size() / 1024
@@ -63,7 +63,7 @@ get.memory.usage <- function() {
 ## @param path Base directory to scan.
 ## @return Combined size, in Gigabytes, used by the files in the given path and in its subdirectories. The disk
 ##         space used by the directory entries themselves is not included.
-## @author Yassen Assenov
+## @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 get.disk.usage <- function(path = getOption("fftempdir")) {
 	if (!isTRUE(file.info(path)[, "isdir"])) {
 		stop("invalid value for path; expected existing directory")
@@ -152,7 +152,7 @@ logger.paste <- function(status.word, txt, logger = .LOGGER) {
 #' }
 #' @seealso \code{\link{logger.isinitialized}} to check if logging is activated;
 #'   \code{\link{logger.start}} for initializing a logger or starting a section
-#' @author Yassen Assenov
+#' @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 #' @export
 logger.getfiles <- function() {
 	if (exists("logfiles", envir = .LOG.INFO, inherits = FALSE)) {
@@ -175,7 +175,7 @@ logger.getfiles <- function() {
 #'   logger.start(fname = NA)
 #' }
 #' @seealso \code{\link{logger.start}} for initializing a logger or starting a section
-#' @author Yassen Assenov
+#' @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 #' @export
 logger.isinitialized <- function() {
 	return(exists("logfiles", envir = .LOG.INFO, inherits = FALSE))
@@ -207,7 +207,7 @@ logger.isinitialized <- function() {
 #' }
 #' @seealso \code{\link{logger.isinitialized}}to check if logging is activated;
 #'   \code{\link{logger.start}} for initializing a logger or starting a section
-#' @author Yassen Assenov
+#' @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 #' @export
 logger.status <- function(txt) {
 	if (!logger.isinitialized()) {
@@ -299,7 +299,7 @@ logger.error <- function(txt, terminate=FALSE) {
 #' or deinitialization, the information about the current output file, as well as any open sections, is deleted.
 #'
 #' @seealso logger.isinitialized
-#' @author Yassen Assenov
+#' @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 #' @export
 logger.start <- function(txt = character(0), fname = NULL) {
 	if (!logger.isinitialized()) {
@@ -362,7 +362,7 @@ logger.completed <- function() {
 ##
 ## @seealso \code{\link{logger.start}} for re-initializing the logger
 ##
-## @author Yassen Assenov
+## @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 logger.addfile <- function(fname) {
 	if (!(length(fname) == 1 && (is.na(fname) || is.character(fname)))) {
 		stop("invalid value for fname")
@@ -413,7 +413,7 @@ logger.close <- function() {
 #' # Validate the current working directory exists
 #' logger.validate.file(getwd(), FALSE)
 #' }
-#' @author Yassen Assenov
+#' @author adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 #' @export
 logger.validate.file <- function(file, is.file = TRUE, terminate = TRUE) {
 	if (!(is.character(file) && length(file) == 1 && (!is.na(file)))) {

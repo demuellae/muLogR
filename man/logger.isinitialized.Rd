@@ -22,5 +22,5 @@ if (!logger.isinitialized())
 \code{\link{logger.start}} for initializing a logger or starting a section
 }
 \author{
-Yassen Assenov
+adapted by Fabian Mueller from RnBeads code by Yassen Assenov
 }
