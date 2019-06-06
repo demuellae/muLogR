@@ -6,12 +6,14 @@ Authors@R: c(
     role = c("aut")),
     person("Fabian", "Mueller", email = "fmueller@mpi-inf.mpg.de",
     role = c("aut", "cre")))
-Date: 2018-03-22
+Date: 2019-06-06
+Version: 0.2
+Encoding: UTF-8
 License: GPL-3
-Version: 0.1
 Depends:
 Imports:
 Suggests:
 Collate:
-	logger.R
-RoxygenNote: 6.0.1
+	'muLogR.R'
+	'logger.R'
+RoxygenNote: 6.1.1
